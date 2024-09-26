@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link rel="stylesheet" href="calc.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    
+    <label>Calculadora</label>
+    <div>
+        <input type="text" id="input1"/>
+        <select id="operator">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+            <option>%</option>
+        </select>
+        <input type="text" id="input2"/>
+        <input type="submit" value="Try me!" onclick="calcula()"/>
+    </div>
+    
+    <script src="calc.js"></script>
+    
+</body>
+</html>

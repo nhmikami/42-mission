@@ -1,0 +1,49 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+.parallax-container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+
+    background-image: url(https://external-preview.redd.it/2RY7Stbo1ncZNj1er4zsRrhO17u5AyhEG9t6TPIt6WU.jpg?width=1080&crop=smart&auto=webp&s=8665cae44cd6c7afd1fc192fc51d2c5962d2bd9e);
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.buffer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 50vh;
+    background-color: black;
+}
+
+.parallax-container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+
+    background-image: url(https://media.audleytravel.com/-/media/images/home/south-america/chile/places/istock_52458960_guanacoes_in_torres_del_paine_national_park_3000x1000.webp?q=79&w=1920&h=685);
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p {
+    color: white;
+    font-family: monospace;
+}

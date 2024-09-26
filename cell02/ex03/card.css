@@ -1,0 +1,61 @@
+table {
+    position: relative;
+    top: 50px;
+    width: 400px;
+    justify-content: center;
+    margin: auto;
+
+    background-color: white;
+    box-shadow: 0px 0px 40px grey;
+    font-family: 'Ink Free';
+    border-radius: 10px;
+}
+
+th {
+    padding: 20px;
+    font-size: 30px;
+}
+
+tbody {
+    align-content: center;
+    text-align: center;
+    margin: 0;
+}
+
+.user {
+    padding: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.social_media {
+    display: block;
+    align-content: center;
+    height: 20px;
+    padding: 10px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Ink Free';
+    font-weight: bold;
+    text-align: center;
+    text-emphasis-color: white;
+    background-color: pink;
+    border: 2px solid;
+    border-color: pink;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 50%;
+    background-color: white;
+    border: 2px solid;
+    border-color: pink;
+}
+
+

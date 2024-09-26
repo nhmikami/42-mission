@@ -1,0 +1,16 @@
+.dropdown{
+    display: inline-block;
+    position: relative;
+    font-size: x-large;
+}
+
+.dropdown-content {
+    display: none;
+    font-size: medium;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+

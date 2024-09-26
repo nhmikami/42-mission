@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link rel="stylesheet" href="calc.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            setInterval(function() {
+                alert("Please, use me..."); 
+                }, 30000);
+
+            $('#tryme').click(function() {
+                var num1 = parseFloat($('#input1').val());
+                var num2 = parseFloat($('#input2').val());
+                var op = $('#operator').val();
+                var result = 0;
+
+                if (num1 >= 0 && num2 >= 0 && Number.isInteger(num1) && Number.isInteger(num2)) {
+                    if (op == '+') {
+                        result = num1 + num2;
+                    } else if (op == '-') {
+                        result = num1 - num2;
+                    } else if (op == '*') {
+                        result = num1 * num2;
+                    } else if (op == '/') {
+                        if (num2 == 0) {
+                            alert("It's over 9000!");
+                            console.log("infinity");
+                            return;
+                        } else {
+                            result = num1 / num2;
+                        }
+                    } else if (op == '%') {
+                        if (num2 == 0) {
+                            alert("It's over 9000!");
+                            console.log("infinity");
+                            return;
+                        } else {
+                            result = num1 % num2;
+                        }
+                    }
+                    alert(result);
+                    console.log("resultado: " + result);
+                } else {
+                    alert("Error :(");
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    
+    <label>Calculadora</label>
+    <div>
+        <input type="text" id="input1"/>
+        <select id="operator">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+            <option>%</option>
+        </select>
+        <input type="text" id="input2"/>
+        <input type="submit" value="Try me!" id="tryme"/>
+    </div>
+    
+</body>
+</html>

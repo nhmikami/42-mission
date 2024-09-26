@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            
+            $("button").click(function() {
+                var task = window.prompt("Nova tarefa:");
+                if (task == "") {
+                    alert("Nenhuma tarefa encontrada");
+                } else {
+                    var newTask = $("<div>").addClass("item").text(task).click(removeTask);
+                    var firstTask = $(".item").first();
+                    $("#ft_list").prepend(newTask);
+                    saveToCookie();
+                }
+            });
+
+            function removeTask() {
+                var confirma = window.confirm("Deseja remover esta tarefa?");
+                if (confirma) {
+                    $(this).remove();
+                    saveToCookie();
+                }
+            };
+
+            function saveToCookie() {
+                var tasks = [];
+                $(".item").each(function() {
+                    tasks.push($(this).text());
+                });
+                document.cookie = "tasks=" + tasks.join(',');
+                console.log(tasks);
+            }
+
+            function loadTasksFromCookie() {
+                var tasks = document.cookie.replace(/(?:(?:^|.*;\s*)tasks\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+                console.log(tasks);
+                if (tasks) {
+                    tasks = tasks.split(',');
+                    $.each(tasks, function(index, task) {
+                        if (task !== "") {
+                            var newTask = $("<div>").addClass("item").text(task).click(removeTask);
+                            $("#ft_list").append(newTask);
+                        }
+                    });
+                }
+            }
+
+            loadTasksFromCookie();
+        });
+    </script>
+
+</head>
+
+<style>
+    div.list {
+    margin: auto;
+    display: block;
+    width: 300px;
+    min-height: 400px;
+    border: 1px solid black;
+    border-radius: 4px;
+    }
+
+    div.item {
+        margin: 10px;
+        padding: 5px;
+        width: auto;
+        color: rgb(101, 75, 197);
+        font-family: 'Ink Free';
+        word-break: break-word;
+        cursor: pointer;
+        border-bottom: 1px solid grey   ;
+    }
+
+    div.label {
+        margin: auto;
+        padding: 5px;
+        font-family: 'Ink Free';
+        font-weight: bold;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    button {
+        margin: auto;
+        margin-top: 10px;
+        padding: 10px;
+        display: block;
+        font-family: 'Ink Free';
+    }
+</style>
+
+<body>
+
+    <div class="label">- To do list -</div>
+    <div id="ft_list" class="list">    
+    </div>
+    
+    <button>Adicionar tarefa</button>
+    
+</body>
+</html>

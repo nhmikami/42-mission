@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baloon</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        
+        $(document).ready(function() {
+            var div = $('#baloonID');
+            var bwidth = div.width();
+            var colors = ["#FF0000", "#00FF00", "#0000FF"];
+            var indexColor = 0;
+
+            $(".baloon").click(function() {
+                bwidth += 10;
+                if (bwidth > 420) {
+                    bwidth = 200;
+                }
+                div.width(bwidth).height(bwidth);
+                indexColor = (indexColor + 1) % 3;
+                div.css('background-color', colors[indexColor]);
+            }); 
+            $(".baloon").mouseout(function() {
+                bwidth -= 5;
+                if (bwidth < 200) {
+                    bwidth = 200;
+                }
+                div.width(bwidth).height(bwidth);
+                if(indexColor == 0) {
+                indexColor = 2;
+                } else {
+                    indexColor = indexColor - 1;
+                }
+                div.css('background-color', colors[indexColor]);
+            });
+
+        });
+    </script>
+</head>
+
+<style>
+    body {
+        display: flex;
+        width: 100%;
+        height: 500px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .baloon {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    
+    <div id="baloonID" class="baloon"></div>
+
+    <script src="baloon.js"></script>
+    
+</body>
+</html>
